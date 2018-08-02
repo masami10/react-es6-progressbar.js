@@ -36,7 +36,6 @@ class Shape extends Component{
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
 
     if(this.props.startAnimate) {
-        console.log('mount');
         shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
     }
 
@@ -44,7 +43,6 @@ class Shape extends Component{
 
   render(){
     if (shape != null && this.props.startAnimate) {
-      　console.log('render');
         shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
     }
 
