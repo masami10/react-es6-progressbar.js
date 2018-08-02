@@ -53,10 +53,10 @@ class Shape extends Component{
 
   render(){
 
-    console.log('render startAnimate'.concat(this.props.startAnimate.toString()));
-    console.log('rendershape'.concat(shape.toString()));
+    console.log('render startAnimate'.concat(this.props.startAnimate));
+    console.log('render shape'.concat(shape));
     if (shape != null && this.props.startAnimate) {
-      　console.log('update');
+      　console.log('render');
         shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
     }
 
