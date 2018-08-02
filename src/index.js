@@ -2,6 +2,8 @@ import React, { Component, createRef } from 'react';
 
 import ProgressBar from 'progressbar.js';
 
+let shape = null;
+
 class Shape extends Component{
   
   constructor(){
@@ -11,12 +13,16 @@ class Shape extends Component{
     this.progressBar = createRef();
     
   }
-  
-  
+
+  componentWillUpdate() {
+    if (shape != null && this.props.startAnimate) {
+        shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
+    }
+  }
   
   componentDidMount(){
     
-    let ShapeType, shape, text_val;
+    let ShapeType, text_val;
     
     if(this.props.type === 'line'){
       ShapeType = ProgressBar.Line;
@@ -34,9 +40,7 @@ class Shape extends Component{
     input_options.text = text_val;
     
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
-    
-    shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
-    
+
   }
   
   render(){
