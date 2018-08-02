@@ -44,10 +44,21 @@ class Shape extends Component{
 
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
 
+    if(this.props.startAnimate) {
+        console.log('mount');
+        shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
+    }
+
   }
 
   render(){
 
+    console.log('render startAnimate'.concat(this.props.startAnimate.toString()));
+    console.log('rendershape'.concat(shape.toString()));
+    if (shape != null && this.props.startAnimate) {
+      　console.log('update');
+        shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
+    }
 
     return(
 
