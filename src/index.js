@@ -15,8 +15,8 @@ class Shape extends Component{
   }
 
   componentWillUpdate() {
-    console.log('startAnimate'.concat(this.props.startAnimate.toString()));
-    console.log('shape'.concat(shape.toString()));
+    console.log('startAnimate'.concat(this.props.startAnimate));
+    console.log('shape'.concat(shape));
     if (shape != null && this.props.startAnimate) {
       　console.log('update');
         shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
