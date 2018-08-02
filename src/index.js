@@ -14,15 +14,6 @@ class Shape extends Component{
 
   }
 
-  componentWillUpdate() {
-    console.log('startAnimate'.concat(this.props.startAnimate));
-    console.log('shape'.concat(shape));
-    if (shape != null && this.props.startAnimate) {
-      　console.log('update');
-        shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
-    }
-  }
-
   componentDidMount(){
 
     let ShapeType, text_val;
@@ -52,9 +43,6 @@ class Shape extends Component{
   }
 
   render(){
-
-    console.log('render startAnimate'.concat(this.props.startAnimate));
-    console.log('render shape'.concat(shape));
     if (shape != null && this.props.startAnimate) {
       　console.log('render');
         shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5);
