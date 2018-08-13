@@ -40,6 +40,7 @@ class Shape extends Component{
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
         } else if (this.props.startAnimate == false) {
             // shape.stop();
+            console.log("shape done");
             shape.set(0);
             // shape.animate(0);
         }
@@ -53,6 +54,7 @@ class Shape extends Component{
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
         } else if (this.props.startAnimate == false) {
             // shape.stop();
+            console.log("shape done");
             shape.set(0);
             // shape.animate(0);
         }
