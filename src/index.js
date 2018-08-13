@@ -36,12 +36,12 @@ class Shape extends Component{
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
 
     if (shape != null) {
-        if (this.props.startAnimate) {
+        if (this.props.startAnimate == true) {
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-        } else {
+        } else if (this.props.startAnimate == false) {
             // shape.stop();
-            // shape.set(0);
-            shape.animate(0);
+            shape.set(0);
+            // shape.animate(0);
         }
     }
 
@@ -49,12 +49,12 @@ class Shape extends Component{
 
   render(){
     if (shape != null) {
-        if (this.props.startAnimate) {
+        if (this.props.startAnimate == true) {
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-        } else {
+        } else if (this.props.startAnimate == false) {
             // shape.stop();
-            // shape.set(0);
-            shape.animate(0);
+            shape.set(0);
+            // shape.animate(0);
         }
     }
 
