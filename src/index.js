@@ -37,12 +37,13 @@ class Shape extends Component{
 
     if (shape != null) {
         if (this.props.startAnimate == true) {
+            console.log("shape start");
+            shape.set(0);
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
         } else if (this.props.startAnimate == false) {
-            // shape.stop();
             console.log("shape done");
+            shape.stop();
             shape.set(0);
-            // shape.animate(0);
         }
     }
 
@@ -51,12 +52,13 @@ class Shape extends Component{
   render(){
     if (shape != null) {
         if (this.props.startAnimate == true) {
+            console.log("render shape start");
+            shape.set(0);
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
         } else if (this.props.startAnimate == false) {
-            // shape.stop();
-            console.log("shape done");
+            console.log("render shape done");
+            shape.stop();
             shape.set(0);
-            // shape.animate(0);
         }
     }
 
