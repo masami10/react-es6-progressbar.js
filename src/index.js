@@ -37,16 +37,16 @@ class Shape extends Component{
 
     if (shape != null) {
         switch(this.props.startAnimate) {
-            case "start":
+            case 0:
                 console.log("shape start");
                 shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
                 break;
-            case "stop":
+            case 1:
                 console.log("shape stop");
                 shape.stop();
                 break;
-            case "finish":
-                console.log("shape stop");
+            case 2:
+                console.log("shape finish");
                 shape.set(0);
                 break;
         }
@@ -57,16 +57,16 @@ class Shape extends Component{
   render(){
       if (shape != null) {
           switch(this.props.startAnimate) {
-              case "start":
-                  console.log("shape start");
+              case 0:
+                  console.log("render shape start");
                   shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
                   break;
-              case "stop":
-                  console.log("shape stop");
+              case 1:
+                  console.log("render shape stop");
                   shape.stop();
                   break;
-              case "finish":
-                  console.log("shape stop");
+              case 2:
+                  console.log("render shape finish");
                   shape.set(0);
                   break;
           }
