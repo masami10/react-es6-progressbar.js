@@ -36,12 +36,15 @@ class Shape extends Component{
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
 
     if (shape != null) {
-        if (this.props.startAnimate == true) {
+        if (this.props.AnimateStatus == 'start') {
             console.log("shape start");
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-        } else if (this.props.startAnimate == false) {
-            console.log("shape done");
+        } else if (this.props.AnimateStatus == 'finished') {
+            console.log("shape finished");
             shape.set(0);
+        } else if (this.props.AnimateStatus == 'stop') {
+            console.log("shape stop");
+            shape.stop();
         }
     }
 
@@ -49,12 +52,15 @@ class Shape extends Component{
 
   render(){
     if (shape != null) {
-        if (this.props.startAnimate == true) {
+        if (this.props.AnimateStatus == 'start') {
             console.log("render shape start");
             shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-        } else if (this.props.startAnimate == false) {
-            console.log("render shape done");
+        } else if (this.props.AnimateStatus == 'finished') {
+            console.log("render shape finished");
             shape.set(0);
+        } else if (this.props.AnimateStatus == 'stop') {
+            console.log("render shape stop");
+            shape.stop();
         }
     }
 
