@@ -35,22 +35,41 @@ class Shape extends Component{
 
     shape = new ShapeType(this.progressBar.current, input_options, this.props.callback);
 
-    if (shape != null && this.props.startAnimate == true) {
-        console.log("shape start");
-        shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-    } else if (this.props.startAnimate == false) {
-        console.log("shape done");
-        shape.set(0);
+    if (shape != null) {
+        switch(this.props.startAnimate) {
+            case "start":
+                console.log("shape start");
+                shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
+                break;
+            case "stop":
+                console.log("shape stop");
+                shape.stop();
+                break;
+            case "finish":
+                console.log("shape stop");
+                shape.set(0);
+                break;
+        }
     }
+
   }
 
   render(){
-      if (shape != null && this.props.startAnimate == true) {
-          console.log("shape start");
-          shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
-      } else if (this.props.startAnimate == false) {
-          console.log("shape done");
-          shape.set(0);
+      if (shape != null) {
+          switch(this.props.startAnimate) {
+              case "start":
+                  console.log("shape start");
+                  shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
+                  break;
+              case "stop":
+                  console.log("shape stop");
+                  shape.stop();
+                  break;
+              case "finish":
+                  console.log("shape stop");
+                  shape.set(0);
+                  break;
+          }
       }
 
     return(
