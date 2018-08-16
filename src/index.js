@@ -59,6 +59,7 @@ class Shape extends Component{
           switch(this.props.startAnimate) {
               case 0:
                   console.log("render shape start");
+                  shape.set(0);
                   shape.animate(this.props.progress >= 0 ? this.props.progress : 0.5, this.props.options, this.props.onStop);
                   break;
               case 1:
