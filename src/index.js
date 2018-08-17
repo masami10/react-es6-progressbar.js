@@ -22,7 +22,7 @@ class Shape extends Component{
     }
   }
 
-  componentDidUpdate(){
+  componentDidMount(){
 
     let ShapeType, text_val;
 
@@ -55,7 +55,7 @@ class Shape extends Component{
                   break;
               case 1:
                   console.log("render shape stop");
-                  shape.stop();
+                  shape.set(1);
                   break;
               case 2:
                   console.log("render shape finish");
