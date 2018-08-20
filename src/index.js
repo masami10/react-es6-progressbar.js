@@ -55,7 +55,7 @@ class Shape extends Component{
                   break;
               case 1:
                   console.log("render shape stop");
-                  shape.set(1);
+                  shape.stop();
                   break;
               case 2:
                   console.log("render shape finish");
